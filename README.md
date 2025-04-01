@@ -14,6 +14,7 @@ The notebook contains explanations on how to fetch data related to SDGs from dif
 #imprt relevant library
 import requests
 import pandas as pd
+```
 ### B) fetching data: from an API, using info, search, query, fetch and requests to find specific data or indicators
 ```python
 base_url = "https://unstats.un.org/sdgs/UNSDGAPIV5"
@@ -28,7 +29,7 @@ else:
     print(f"Request failed with status code {response.status_code}: {response.text}")
 
 print(goals)
-
+```
 ### C) Fetching data from a specific geography or time period
 ```python
 goal_code = 1  # For SDG Goal 1
@@ -43,7 +44,7 @@ if response_geoareas.status_code == 200:
     print(geoareas_df.head())
 else:
     print(f"Error {response_geoareas.status_code}: {response_geoareas.text}")
-
+```
 ### D) Visualising data with graphs
 ```python
 import matplotlib.pyplot as plt
