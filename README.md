@@ -287,8 +287,9 @@ Levenshtein.ratio(s1=true_string, s2=gpt_string_2)
 
 # 4. Reflection: comparing the codes and my process
 
-From my attempts to replicate a preexisting code using ChatGPT I learnt the following:
-When replicating a code, it works to first create a general code, and then work on quick iterations based on the previous output. 
+What did I learn from my attempts to replicate a pre-existing code using a LLM? 
+
+When replicating a code, it works to first create a general code with as much detail as I can, and then work on quick iterations based on the previous output. 
 When comparing the two codes myself, without the Levenshtein measure, I can see that the AI generated response includes variables that were defined higher up in the script on the original notebook. This could easily be removed by iterating on the prompt again, by telling it to assume certain variables are predefined. 
 
 ChatGPT, an LLM, took a different approach to forming the final string: it fomulated it as a concatenated f-string instead of adding. Perhaps it has been biased towards this form of generation through its training process? I imagine that prompts could probably steer it to use plus signs-- although I don't know why this would actually be necessary in practice! 
