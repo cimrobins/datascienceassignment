@@ -5,9 +5,10 @@
 3. Comparison of the AI-generated code and the original
 4. Brief reflection report
 # Task 1: Original Notebook Analysis 
-## 1. Key code sections to define notebook's functionality
-The notebook contains explanations on how to fetch data related to SDGs from different libraries, sort and process it, and visualise in simple graphs. 
+## 1. Examples of key code sections
+The notebook contains explanations on how to fetch data related to SDGs from different libraries, sort and process it, and visualise in simple graphs. Here, I give brief description of key codes and examples from the original notebook.  
 ### A) import/ install libraries that contain data for tracking SDGS: 
+for example:
 ```python
 #install request
 !pip install requests
@@ -16,6 +17,7 @@ import requests
 import pandas as pd
 ```
 ### B) fetching data: from an API, using info, search, query, fetch and requests to find specific data or indicators
+for example: 
 ```python
 base_url = "https://unstats.un.org/sdgs/UNSDGAPIV5"
 
@@ -31,6 +33,7 @@ else:
 print(goals)
 ```
 ### C) fetching data from a specific geography or time period
+for example: 
 ```python
 goal_code = 1  # For SDG Goal 1
 
@@ -46,6 +49,7 @@ else:
     print(f"Error {response_geoareas.status_code}: {response_geoareas.text}")
 ```
 ### D) visualising data
+for example: 
 ```python
 import matplotlib.pyplot as plt
 import wbgapi as wb
