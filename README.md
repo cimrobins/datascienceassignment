@@ -1,7 +1,7 @@
 # Assignment 1: Reproducing DS4SDGs Notebook Examples with Generative AI
 ## Contents
 1. Brief analysis of the original notebook
-2. Choice of code to replicate and discussion of Chat GPT replication process
+2. Chosen code to replicate and transcript of conversation with ChatGPT
 3. Comparison of the AI-generated code and the original
 4. Brief reflection report
 # Task 1: Original Notebook Analysis 
