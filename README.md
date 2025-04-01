@@ -287,7 +287,7 @@ Levenshtein.ratio(s1=true_string, s2=gpt_string_2)
 
 # 4. Reflection: comparing the codes and my process
 
-What did I learn from my attempts to replicate a pre-existing code using a LLM? 
+What did I learn from my attempts to replicate a pre-existing code with ChatGPT? 
 
 When replicating a code, it works to first create a general code with as much detail as I can, and then work on quick iterations based on the previous output. 
 When comparing the two codes myself, without the Levenshtein measure, I can see that the AI generated response includes variables that were defined higher up in the script on the original notebook. This could easily be removed by iterating on the prompt again, by telling it to assume certain variables are predefined. 
