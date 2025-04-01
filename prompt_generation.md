@@ -133,4 +133,85 @@ if response.status_code == 200:
     print(geo_df.head())
 else:
     print(f"Error: {response.status_code} - {response.text}")
+```
+# 3. Comparison of the Chat GPT-generated code with the original
 
+I used the following Chat GPT prompt on a new chat to help me compare the texts between each  code-creation prompt:
+**Me:** I want a measure for how dissimilar two pieces of text are
+
+ChatGPT recommended me to use 'Levenshtein Distance', stating:
+'1. Edit Distance (Levenshtein Distance)
+Measures how many single-character edits (insertions, deletions, substitutions) are needed to transform one text into another.
+Works well for short strings but not ideal for meaning-based comparisons.'
+
+In this way, I used the Levenshtein Distance on python to compare the similarity between the strings after each iteration. It produced a Levenshtein ratio between 0 and 1. At first iteration, there was a value of 0.7. After iteration, the value reached 0.83. This suggests a strong similarity between the two code strings. This was only three iterations, and with another three, it would get really close. I expect that if I created a graph to visualise the level of similarity between the two, this would produce a curve that 'tailed off', as initial re-iterations produced larger improvements to the final iterations. 
+
+```python
+!pip install levenshtein
+import Levenshtein
+
+
+true_string = '''
+goal_code = 1  # For SDG Goal 1
+
+endpoint_geoareas = f'/v1/sdg/Goal/{goal_code}/GeoAreas'
+
+response_geoareas = requests.get(base_url + endpoint_geoareas)
+
+if response_geoareas.status_code == 200:
+    geoareas_data = response_geoareas.json()
+    geoareas_df = pd.DataFrame(geoareas_data)
+    print(geoareas_df.head())
+else:
+    print(f"Error {response_geoareas.status_code}: {response_geoareas.text}")
+'''
+
+
+gpt_string = '''import requests
+import pandas as pd
+
+# Define variables
+goal_code = 1
+base_url = "https://example.com/api"  # Replace with actual base URL
+endpoint_geoareas = f"/v1/sdg/Goal/{goal_code}/GeoAreas"
+
+# Make request
+response = requests.get(f"{base_url}{endpoint_geoareas}")
+
+# Check response status
+if response.status_code == 200:
+    data = response.json()
+    df = pd.DataFrame(data)
+    print(df.head())
+else:
+    print(f"Error: {response.status_code} - {response.text}")'''
+
+
+gpt_string_2 = '''goal_code = 1
+base_url = "https://example.com/api"
+endpoint_geoareas = f"/v1/sdg/Goal/{goal_code}/GeoAreas"
+
+response = requests.get(f"{base_url}{endpoint_geoareas}")
+
+if response.status_code == 200:
+    geo_data = response.json()
+    geo_df = pd.DataFrame(geo_data)
+    print(geo_df.head())
+else:
+    print(f"Error: {response.status_code} - {response.text}") '''
+
+
+Levenshtein.ratio(s1=true_string, s2=gpt_string_2)
+```
+
+# 4. Reflection: comparing the codes and my process
+
+From my attempts to replicate a preexisting code using ChatGPT I learnt the following:
+When replicating a code, it works to first create a general code, and then work on quick iterations based on the previous output. 
+When comparing the two codes myself, without the Levenshtein measure, I can see that the AI generated response includes variables that were defined higher up in the script on the original notebook. This could easily be removed by iterating on the prompt again, by telling it to assume certain variables are predefined. 
+
+ChatGPT, an LLM, took a different approach to forming the final string: it fomulated it as a concatenated f-string instead of adding. Perhaps it has been biased towards this form of generation through its training process? I imagine that prompts could probably steer it to use plus signs-- although I don't know why this would actually be necessary in practice! 
+
+There was a slight discrepancy between the variable names chosen- ChatGPT went for slightly more parsomonious names. It also seems to be keen on using (more common) f-string operations instead of variable names. This might be because I mentioned the f-strings several times in my prompts. I more experienced coder/ user of LLMs would probably have foreseen that this might guide the LLM to prefer a certain formulation. If I was to attempt this again, I would try to prompt without mentioning the f-strings so much, to see whether it would still use them. 
+
+Finally, the Levenshtein measure turned out to be a useful method of objectively examining my code's similarity to the original, providing a measure to justify the closeness. It worked well to combine the quantitative measure of similarity with my own qualitative comparison, to complement each other. I would be interested to learn more about the different uses of measures, as well as different types and their uses. 
