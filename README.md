@@ -59,4 +59,12 @@ plt.ylabel('GDP Per Capita (current US$)')
 plt.xlabel('Year')
 plt.legend(title="Countries")
 plt.show()
+```
+## 2. Logic
+The notebook is logical: it progresses through the steps of importing relevant libraries and packages for a specific example, then carries out the process of finding specific data/ indicators, then fetches and processes the data,  then visualises it. It also follows a logic of basing each section on a different key dataset, rather than jumping between them. 
 
+## 3. Libraries
+The notebook explains how to use key libraries: pandas,  matplotlib, wbgapi, heatmapz, requests. These perform different functions, from fetching specific data to organising the data or processing it through e.g. creating heat maps. 
+
+## 4. Dependencies
+The notebook depends upon various python packages, for example pip. These need to be installed in Jupyter for the code to run. 
