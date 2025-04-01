@@ -1,11 +1,11 @@
 # Assignment 1: Reproducing DS4SDGs Notebook Examples with Generative AI
 ## Contents
-1. Brief analysis of the original notebook
-2. Chosen code to replicate and transcript of conversation with ChatGPT
-3. Levenshtein measure to compare the scripts
-4. Reflection report
-# Task 1: Original Notebook Analysis 
-## 1. Examples of key code sections
+- [1. Original Notebook Brief Analysis](#original-notebook-brief-analysis)
+-  [2. Prompt Engineering](#2-prompt-engineering)
+-  [3. Quantitative comparison: Levenshtein Ratio](#3-quantitative-comparison-levenshtein-ratio)
+-  [4. Qualitative comparison and reflection on the process](#4-qualitative-comparison-and-reflection-on-the-process)
+# Original Notebook Brief Analysis 
+## i. Examples of key code sections
 The notebook contains explanations on how to fetch data related to SDGs from different libraries, sort and process it, and visualise in simple graphs. Here, I give brief description of key codes and examples from the original notebook.  
 ### A) import/ install libraries that contain data for tracking SDGS: 
 for example:
@@ -64,13 +64,13 @@ plt.xlabel('Year')
 plt.legend(title="Countries")
 plt.show()
 ```
-## 2. Logic
+## ii. Logic
 The notebook is logical: it progresses through the steps of importing relevant libraries and packages for a specific example, then carries out the process of finding specific data/ indicators, then fetches and processes the data,  then visualises it. It also follows a logic of basing each section on a different key dataset, rather than jumping between them. 
 
-## 3. Libraries
+## iii. Libraries
 The notebook explains how to use key libraries: pandas,  matplotlib, wbgapi, heatmapz, requests. These perform different functions, from fetching specific data to organising the data or processing it through e.g. creating heat maps. 
 
-## 4. Dependencies
+## iv. Dependencies
 The notebook depends upon various python packages, for example pip. These need to be installed in Jupyter for the code to run. 
 
 # 2. Prompt Engineering
@@ -209,7 +209,7 @@ if response.status_code == 200:
 else:
     print(f"Error: {response.status_code} - {response.text}")
 ```
-# 3. Comparison of the Chat GPT-generated code with the original
+# 3. Quantitative comparison: Levenshtein Ratio
 
 I used the following Chat GPT prompt on a new chat to help me compare the texts between each  code-creation prompt:
 
@@ -285,7 +285,7 @@ else:
 Levenshtein.ratio(s1=true_string, s2=gpt_string_2)
 ```
 
-# 4. Reflection: comparing the codes and my process
+# 4. Qualitative comparison and reflection on the process
 
 What did I learn from my attempts to replicate a pre-existing code with ChatGPT? 
 
@@ -296,5 +296,4 @@ ChatGPT, an LLM, took a different approach to forming the final string: it fomul
 
 There was a slight discrepancy between the variable names chosen- ChatGPT went for slightly more parsomonious names. It also seems to be keen on using (more common) f-string operations instead of variable names. This might be because I mentioned the f-strings several times in my prompts. I more experienced coder/ user of LLMs would probably have foreseen that this might guide the LLM to prefer a certain formulation. If I was to attempt this again, I would try to prompt without mentioning the f-strings so much, to see whether it would still use them. 
 
-Finally, the Levenshtein measure turned out to be a useful method of objectively examining my code's similarity to the original, providing a measure to justify the closeness. It worked well to combine the quantitative measure of similarity with my own qualitative comparison, to complement each other. I would be interested to learn more about the different uses of measures, as well as different types and their uses. 
-
+Finally, the Levenshtein measure turned out to be a useful method of objectively examining my code's similarity to the original, providing a measure to justify the closeness. It worked well to combine the quantitative measure of similarity with my own qualitative comparison, to complement each other. I would be interested to learn more about the different types of measures and their uses. 
