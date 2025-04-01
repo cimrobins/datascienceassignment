@@ -1,4 +1,4 @@
-# Homework submission for assignment 1: Reproducing DS4SDGs Notebook Examples with Generative AI
+# Assignment 1: Reproducing DS4SDGs Notebook Examples with Generative AI
 ## Contents
 1. Brief analysis of the original notebook
 2. Choice of code to replicate and discussion of Chat GPT replication process
@@ -30,7 +30,7 @@ else:
 
 print(goals)
 ```
-### C) Fetching data from a specific geography or time period
+### C) fetching data from a specific geography or time period
 ```python
 goal_code = 1  # For SDG Goal 1
 
@@ -45,7 +45,7 @@ if response_geoareas.status_code == 200:
 else:
     print(f"Error {response_geoareas.status_code}: {response_geoareas.text}")
 ```
-### D) Visualising data with graphs
+### D) visualising data
 ```python
 import matplotlib.pyplot as plt
 import wbgapi as wb
