@@ -147,7 +147,7 @@ Lets establish some variables now:
 the sdg goal code  (goal_code) is 1 
 and the endpoint geoareas (endpoint_geoareas)  is  an f_string  that uses goal_code as shown here - f'/v1/sdg/Goal/{goal_code}/GeoAreas'
 
-** dont import. **
+**dont import.**
 
 The aim is to make a request using a base_url var and endpoint_geoareas,
 check for status 200, if true
@@ -185,7 +185,7 @@ Lets establish some variables now:
 the sdg goal code  (goal_code) is 1 
 and the endpoint geoareas (endpoint_geoareas)  is  an f_string  that uses goal_code as shown here - f'/v1/sdg/Goal/{goal_code}/GeoAreas'
 
-** dont make any package imports and dont include comments. **
+**dont make any package imports and dont include comments.**
 
 The aim is to make a request using a base_url var and endpoint_geoareas,
 check for status 200, if true
