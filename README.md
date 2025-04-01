@@ -212,12 +212,15 @@ else:
 # 3. Comparison of the Chat GPT-generated code with the original
 
 I used the following Chat GPT prompt on a new chat to help me compare the texts between each  code-creation prompt:
-**Me:** I want a measure for how dissimilar two pieces of text are
+
+**Me:** *I want a measure for how dissimilar two pieces of text are*
 
 ChatGPT recommended me to use 'Levenshtein Distance', stating:
-'1. Edit Distance (Levenshtein Distance)
+
+*'1. Edit Distance (Levenshtein Distance)
 Measures how many single-character edits (insertions, deletions, substitutions) are needed to transform one text into another.
-Works well for short strings but not ideal for meaning-based comparisons.'
+Works well for short strings but not ideal for meaning-based comparisons.'*
+
 
 In this way, I used the Levenshtein Distance on python to compare the similarity between the strings after each iteration. It produced a Levenshtein ratio between 0 and 1. At first iteration, there was a value of 0.7. After iteration, the value reached 0.83. This suggests a strong similarity between the two code strings. This was only three iterations, and with another three, it would get really close. I expect that if I created a graph to visualise the level of similarity between the two, this would produce a curve that 'tailed off', as initial re-iterations produced larger improvements to the final iterations. 
 
