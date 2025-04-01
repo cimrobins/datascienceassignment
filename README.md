@@ -92,7 +92,7 @@ else:
 I chose this section of code because I initially did not understand it, and thought it was a good level of compexity to try and get Chat GPT to produce with my prompting.  It is closely related to the main purpose of the notebook, to retrieve data from an external API, includes pandas dataframes and also error handling. 
 
 ## My conversation with ChatGPT 
-I write below my conversation with Chat GPT. Between each generation, I compared the codes and their similarity to the original to create a closer match. 
+I write below my conversation with Chat GPT. Between each of the three generations, I compared the codes and their similarity to the original to create a closer match. The new additions in each iteration of my prompt are shown in bold. 
 
 ### **Prompt 1:**  
 **Me:** Imagine you are my coding assistant and I require you for some help when writing some EDA code for a homework assignment:
@@ -147,7 +147,7 @@ Lets establish some variables now:
 the sdg goal code  (goal_code) is 1 
 and the endpoint geoareas (endpoint_geoareas)  is  an f_string  that uses goal_code as shown here - f'/v1/sdg/Goal/{goal_code}/GeoAreas'
 
-### dont import. 
+** dont import. **
 
 The aim is to make a request using a base_url var and endpoint_geoareas,
 check for status 200, if true
@@ -185,7 +185,7 @@ Lets establish some variables now:
 the sdg goal code  (goal_code) is 1 
 and the endpoint geoareas (endpoint_geoareas)  is  an f_string  that uses goal_code as shown here - f'/v1/sdg/Goal/{goal_code}/GeoAreas'
 
-### dont make any package imports and dont include comments. 
+** dont make any package imports and dont include comments. **
 
 The aim is to make a request using a base_url var and endpoint_geoareas,
 check for status 200, if true
